@@ -1,9 +1,6 @@
 <script setup lang="ts">
 // https://github.com/vueuse/head
 // you can use this to manipulate the document head in any components,
-
-import { supabase } from './composables/supabase'
-
 // they will be rendered correctly in the html results with vite-ssg
 useHead({
   title: 'Pair Matcher',
@@ -12,9 +9,6 @@ useHead({
   ],
 })
 
-const { user, session, error } = await supabase.auth.signIn({
-  provider: 'google',
-})
 </script>
 
 <template>

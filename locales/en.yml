@@ -11,4 +11,10 @@ intro:
   hi: Hi, {name}!
   aka: Also known as
   whats-your-name: What's your name?
-not-found: Not found
+not-found: Not founprojecto
+navigation:
+  profile: Profile
+  projects: Projects
+  myprojects: My Projects
+all-projects:
+  search: Search in all projects

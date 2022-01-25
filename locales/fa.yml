@@ -1,0 +1,20 @@
+button:
+  about: درباره
+  back: بازگشت
+  go: برو
+  home: صفحه اصلی
+  toggle_dark: تغییر تم
+  toggle_langs: تغییر زبان
+intro:
+  desc: برنامه یافتن هم‌یاد
+  dynamic-route: مسیر داینامیک
+  hi: سلام، {name}!
+  aka: همچنین بهش میگن
+  whats-your-name: اسمت چیه؟
+not-found: صفحه یافت نشد
+navigation:
+  profile: پروفایل
+  projects: همه پروژه‌ها
+  myprojects: پروژه‌های من
+all-projects:
+  search: جستجوی پروژه

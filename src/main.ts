@@ -13,6 +13,7 @@ import './styles/main.css'
 import 'virtual:windi-utilities.css'
 // windicss devtools support (dev only)
 import 'virtual:windi-devtools'
+import { useUserStore } from './stores/user'
 
 const routes = setupLayouts(generatedRoutes)
 
@@ -23,5 +24,13 @@ export const createApp = ViteSSG(
   (ctx) => {
     // install all modules under `modules/`
     Object.values(import.meta.globEager('./modules/*.ts')).forEach(i => i.install?.(ctx))
+    if (ctx.isClient) {
+      ctx.router.beforeEach((to, from, next) => {
+        const store = useUserStore()
+        if (to.meta.requiresAuthorize && !store.isUserAuthorized)
+          next({ name: 'login' })
+        else next()
+      })
+    }
   },
 )

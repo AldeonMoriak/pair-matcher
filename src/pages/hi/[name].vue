@@ -47,3 +47,8 @@ watchEffect(() => {
     </div>
   </div>
 </template>
+
+<route lang="yaml">
+meta:
+  requiresAuthorize: true
+</route>

@@ -1,3 +1,4 @@
+import type { User } from '@supabase/supabase-js'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 
 export const useUserStore = defineStore('user', () => {
@@ -6,6 +7,10 @@ export const useUserStore = defineStore('user', () => {
    */
   const savedName = ref('')
   const previousNames = ref(new Set<string>())
+
+  const user = ref<User>()
+
+  const isUserAuthorized = computed(() => !!user.value)
 
   const usedNames = computed(() => Array.from(previousNames.value))
   const otherNames = computed(() => usedNames.value.filter(name => name !== savedName.value))
@@ -27,6 +32,8 @@ export const useUserStore = defineStore('user', () => {
     setNewName,
     otherNames,
     savedName,
+    user,
+    isUserAuthorized,
   }
 })
 
